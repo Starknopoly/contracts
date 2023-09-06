@@ -11,7 +11,7 @@ mod spawn {
     use stark_nopoly::constants::INIT_GOLD;
     use stark_nopoly::constants::INIT_STEPS;    
 
-    fn execute(ctx: Context) {
+    fn execute(ctx: Context, nick_name: felt252 ) {
         let max_map: u64 = MAX_MAP.try_into().unwrap();
         let init_gold: u64 = INIT_GOLD.try_into().unwrap();
         let init_steps: u64 = INIT_STEPS.try_into().unwrap();
@@ -28,6 +28,7 @@ mod spawn {
             (
                 Player {
                     id: ctx.origin, // 玩家钱包地址
+                    nick_name: nick_name,
                     joined_time:time_now, 
                     direction: 1_u64, //1:顺时针  2：逆时针
                     gold: init_gold,
