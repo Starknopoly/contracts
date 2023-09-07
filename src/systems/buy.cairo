@@ -21,7 +21,7 @@ mod buy {
         // 得到玩家所处位置的地块信息
         let mut land = get !(ctx.world, player.position, (Land));
         // 确保所在地块不是自己的地块，也不是无主地块
-        assert(land.owner != starknet::contract_address_const::<0x0>() || land.owner != ctx.origin, 'your land or null');
+        assert(land.owner != starknet::contract_address_const::<0x0>() && land.owner != ctx.origin, 'your land or null');
 		
         let mut player2 = get !(ctx.world, land.owner, (Player));
  		let mut townhall = get !(ctx.world, 1, (Townhall));

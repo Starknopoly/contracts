@@ -16,6 +16,9 @@ sozo auth writer Player roll
 
 sozo auth writer Land roll
 
+sozo auth writer Townhall roll
+
+
 sozo auth writer Player build
 
 sozo auth writer Land build
@@ -32,6 +35,12 @@ sozo auth writer Land supplement
 
 sozo auth writer Townhall supplement
 
+sozo auth writer Player explode 
+
+sozo auth writer Land explode
+
+sozo auth writer Townhall explode
+
 
 
 //play
@@ -42,7 +51,8 @@ sozo execute roll
 
 sozo execute build --calldata 1  // 1: Bank
 
-sozo execute build --calldata 0x4f
+sozo execute explode     //  set bomb
+
 
 
 //view

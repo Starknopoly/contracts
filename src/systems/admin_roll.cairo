@@ -1,5 +1,5 @@
 #[system]
-mod roll {
+mod admin_roll {
     use array::ArrayTrait;
     use box::BoxTrait;
     use traits::{Into, TryInto};
@@ -13,7 +13,7 @@ mod roll {
     use stark_nopoly::constants::BOMB_PRICE; 
 
 
-    fn execute(ctx: Context) {
+    fn execute(ctx: Context, admin_position: u64) {
 
         let max_map: u64 = MAX_MAP.try_into().unwrap();
         let time_now: u64 = starknet::get_block_timestamp(); 
@@ -33,12 +33,14 @@ mod roll {
 
         // 1.更新玩家投掷后的位置
         let mut new_positon: u64 = 0;
-        if player.position + rolling <= max_map {
-                new_positon = player.position + rolling;         
+        if admin_position <= max_map {
+                //new_positon = player.position + rolling; 
+                new_positon = admin_position;
             } else {
-                new_positon = player.position + rolling - max_map;
+                //new_positon = player.position + rolling - max_map;
+                new_positon = admin_position - max_map;
             }
-
+            
         player.position = new_positon;
         let mut land = get !(ctx.world, new_positon, (Land));
         let mut land_owner = get !(ctx.world, land.owner, (Player));

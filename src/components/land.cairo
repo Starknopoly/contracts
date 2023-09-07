@@ -10,4 +10,6 @@ struct Land {
     owner:ContractAddress, // 地块主人
     building_type: u64, // 地面建筑物类型
     price: u64, // 该地块的综合价格(历次建筑的价格总和)
+    bomb: bool,
+    bomber: ContractAddress,
 }
