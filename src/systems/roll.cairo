@@ -15,7 +15,7 @@ mod roll {
         let max_map: u64 = MAX_MAP.try_into().unwrap();
         let time_now: u64 = starknet::get_block_timestamp(); 
 
-        //确保账户存在，并获取账户实例
+        //确保账户存在
         let mut player = get !(ctx.world, ctx.origin, (Player));
         assert(player.joined_time != 0, 'you not join');
         assert(player.steps > 0, 'steps not enough');

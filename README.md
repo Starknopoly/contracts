@@ -6,15 +6,7 @@ sozo migrate --name test
 
 torii
 
-
 sozo execute set_townhall  //国库
-
-sozo execute set_building  --calldata 1,100  //酒店 100
-
-sozo execute set_building  --calldata 2,500  //银行 500
-
-sozo execute set_building  --calldata 3,1000 //加油站 1000
-
 
 // Authoritarian
 
@@ -39,3 +31,22 @@ sozo auth writer Player supplement
 sozo auth writer Land supplement
 
 sozo auth writer Townhall supplement
+
+
+
+//play
+
+sozo execute spawn --calldata 0x41424344 // with nickName "ABCD"
+
+sozo execute roll
+
+sozo execute build --calldata 1  // 1: Bank
+
+sozo execute build --calldata 0x4f
+
+
+//view
+
+sozo component entity Player 0x517ececd29116499f4a1b64b094da79ba08dfd54a3edaa316134c41f8160973
+
+sozo component entity Land 0x33

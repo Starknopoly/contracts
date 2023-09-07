@@ -1,4 +1,3 @@
-mod set_building;
 mod set_townhall;
 mod spawn;
 mod roll;

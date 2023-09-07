@@ -6,6 +6,7 @@ use starknet::ContractAddress;
 struct Player {
     #[key]
     id: ContractAddress,    // 玩家钱包地址
+    nick_name: felt252,     // 玩家昵称
     joined_time:u64, // 加入时间(区块时间戳)
     direction:u64, //1:顺时针  2：逆时针 (目前均为顺时针)
     gold:u64, // 金币数量

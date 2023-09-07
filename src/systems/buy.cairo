@@ -11,7 +11,7 @@ mod buy {
     use stark_nopoly::components::townhall::Townhall;
 
 
-    fn execute(ctx: Context, building_type: u64) {
+    fn execute(ctx: Context) {
 
         let time_now: u64 = starknet::get_block_timestamp(); 
 
