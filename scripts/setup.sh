@@ -23,3 +23,7 @@ sozo auth writer Townhall supplement
 sozo auth writer Player explode 
 sozo auth writer Land explode
 sozo auth writer Townhall explode
+
+sozo auth writer Player admin_roll
+sozo auth writer Land admin_roll
+sozo auth writer Townhall admin_roll
