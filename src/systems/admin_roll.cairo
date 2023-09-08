@@ -10,7 +10,6 @@ mod admin_roll {
     use stark_nopoly::components::land::Land;
     use stark_nopoly::components::townhall::Townhall;
     use stark_nopoly::constants::MAX_MAP;
-    use stark_nopoly::constants::BOMB_PRICE; 
 
 
     fn execute(ctx: Context, admin_position: u64) {
@@ -48,11 +47,10 @@ mod admin_roll {
 
         // 判断是否有地雷
         if land.bomb {
-           let bomb_price: u64 = BOMB_PRICE.try_into().unwrap();
            let mut bomber = get !(ctx.world, land.bomber, (Player));
-           if player.gold >= bomb_price * 2 {
-                player.gold -= bomb_price * 2;
-                bomber.gold += bomb_price * 2;
+           if player.gold >= land.bomb_price * 2 {
+                player.gold -= land.bomb_price * 2;
+                bomber.gold += land.bomb_price * 2;
            } else{   
                 bomber.gold += player.gold;
                 player.gold = 0;

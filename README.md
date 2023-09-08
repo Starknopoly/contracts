@@ -10,6 +10,10 @@ sozo execute set_townhall  //国库
 
 // Authoritarian
 
+sh ./setup.sh
+
+or:
+
 sozo auth writer Player spawn
 
 sozo auth writer Player roll
@@ -51,7 +55,7 @@ sozo execute roll
 
 sozo execute build --calldata 1  // 1: Bank
 
-sozo execute explode     //  set bomb
+sozo execute explode --calldata 256     //  set bomb with price 256
 
 
 

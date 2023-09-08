@@ -12,4 +12,5 @@ struct Land {
     price: u64, // 该地块的综合价格(历次建筑的价格总和)
     bomb: bool,
     bomber: ContractAddress,
+    bomb_price: u64,
 }
