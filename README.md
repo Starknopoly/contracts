@@ -1,3 +1,7 @@
+v 0.1.3
+Added the bomb function, the price of the bomb can be customized.
+
+
 sozo build
 
 katana --disable-fee
