@@ -24,9 +24,9 @@ mod admin_roll {
         assert(player.steps > 0, 'steps not enough');   
         assert(player.gold > 0, 'gold not enough');
 
-        let rolling: u64 = time_now % 5 + 1;//生成一个1-6的（伪）随机数
+        // let rolling: u64 = time_now % 5 + 1;//生成一个1-6的（伪）随机数
         player.steps -= 1;
-        player.last_point = rolling;
+        player.last_point = 0;
         player.last_time = time_now;
 
         //本轮结算
@@ -60,13 +60,9 @@ mod admin_roll {
 
            land.bomb = false;
            set !(ctx.world, (bomber,land));
-
         }
 
-
         // 2.结算酒店费用。住宿费是酒店总价的10%，9%给酒店所有者，1%放入金库池
-
-
         if land.building_type == 1 {
             assert(player.gold > land.price * 10 / 100, 'you lose');
             player.gold -= land.price * 10 / 100 ;
