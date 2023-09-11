@@ -1,6 +1,14 @@
 v 0.1.3
 Added the bomb function, the price of the bomb can be customized.
 
+v 0.1.4
+fix bugs:
+Player bance less than accommodation can continue to roll.
+Charge oneself for accommodation.
+Player can rolling too often.
+Bomb can be planted on land where there are buildings.
+Player cannot continuously place bombs on the same land.
+The bomber not pays Townhall 20% of his bombing income.
 
 sozo build
 

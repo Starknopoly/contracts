@@ -22,6 +22,7 @@ mod roll {
         assert(player.joined_time != 0, 'you not join');
         assert(player.steps > 0, 'steps not enough');   
         assert(player.gold > 0, 'gold not enough');
+        assert(time_now - player.last_time > 10, 'roll too often');
 
         let rolling: u64 = time_now % 5 + 1;//生成一个1-6的（伪）随机数
         player.steps -= 1;
@@ -48,9 +49,11 @@ mod roll {
            let mut bomber = get !(ctx.world, land.bomber, (Player));
            if player.gold >= land.bomb_price * 2 {
                 player.gold -= land.bomb_price * 2;
-                bomber.gold += land.bomb_price * 2;
+                bomber.gold   += land.bomb_price * 2 * 8 / 10;
+                townhall.gold += land.bomb_price * 2 * 2 / 10;
            } else{   
-                bomber.gold += player.gold;
+                bomber.gold   += player.gold * 8 / 10;
+                townhall.gold += player.gold * 2 / 10;
                 player.gold = 0;
            }
 
@@ -60,13 +63,18 @@ mod roll {
         }
 
         // 2.结算酒店费用。住宿费是酒店总价的10%，9%给酒店所有者，1%放入金库池
-
-
-        if land.building_type == 1 {
-            assert(player.gold > land.price * 10 / 100, 'you lose');
-            player.gold -= land.price * 10 / 100 ;
-            land_owner.gold += land.price * 9 / 100 ;
-            townhall.gold += land.price * 1 / 100 ;
+        // 玩家自己的酒店不用付费，如果玩家余额小于住宿费，则玩家余额归零
+        if land.building_type == 1 && land.owner != ctx.origin {
+            if player.gold >= land.price * 10 / 100{
+                player.gold -= land.price * 10 / 100 ;
+                land_owner.gold += land.price * 9 / 100 ;
+                townhall.gold += land.price * 1 / 100 ;                
+            }else{
+                land_owner.gold += player.gold * 9 / 10 ;
+                townhall.gold   += player.gold * 1 / 10 ;
+                player.gold = 0;
+            }
+            
         }
 
         set !(ctx.world, (player, land_owner, townhall));
