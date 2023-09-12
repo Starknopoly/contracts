@@ -14,5 +14,6 @@ struct Player {
     steps:u64, // 可用步数(可投掷骰子的次数)
     last_point:u64, // 最近一次掷出的点数
     last_time:u64, // 最近一次掷骰子的时间(区块时间戳)
+    banks: u64,
 
 }

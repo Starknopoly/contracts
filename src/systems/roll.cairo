@@ -22,7 +22,7 @@ mod roll {
         assert(player.joined_time != 0, 'you not join');
         assert(player.steps > 0, 'steps not enough');   
         assert(player.gold > 0, 'gold not enough');
-        assert(time_now - player.last_time > 10, 'roll too often');
+        assert(time_now - player.last_time > 5, 'roll too often');
 
         let rolling: u64 = time_now % 5 + 1;//生成一个1-6的（伪）随机数
         player.steps -= 1;
@@ -75,6 +75,11 @@ mod roll {
                 player.gold = 0;
             }
             
+        }
+
+        //3.结算银行收入
+        if player.banks > 0 {
+            player.gold += rolling * player.banks;
         }
 
         set !(ctx.world, (player, land_owner, townhall));

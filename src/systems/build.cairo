@@ -49,6 +49,10 @@ mod build {
         land.building_type = building_type;
         land.price += building_price; // 地价 == 建设价
         player.gold -= building_price; // 玩家建筑所花费的金币直接烧掉？或存入国库？
+        // 如果是银行
+        if building_type == 2{
+            player.banks += 1;
+        }
         assert(player.gold >= 0, 'gold not enaugh');
         set !(ctx.world, (player,land));
         return ();

@@ -33,6 +33,12 @@ mod buy {
 		land.owner = ctx.origin; // 地权转移
 		land.price = (land.price * 13)/10; //地价更新
 
+        // 如果是银行
+        if land.building_type == 2{
+            player.banks  += 1;
+            player2.banks -= 1;
+        }
+
         set !(ctx.world, (player,player2,townhall,land)); 
         return ();
     }

@@ -65,7 +65,7 @@ sozo execute spawn --calldata 0x41424344 // with nickName "ABCD"
 
 sozo execute roll
 
-sozo execute build --calldata 1  // 1: Bank
+sozo execute build --calldata 1  // 1: Hotel
 
 sozo execute explode --calldata 256     //  set bomb with price 256
 

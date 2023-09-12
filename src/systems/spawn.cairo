@@ -36,6 +36,7 @@ mod spawn {
                     steps: init_steps,
                     last_point:0_u64, 
                     last_time:0_u64,
+                    banks: 0_u64,
                 },
             )
         );
