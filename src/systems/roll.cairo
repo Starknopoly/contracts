@@ -79,7 +79,8 @@ mod roll {
 
         //3.结算银行收入
         if player.banks > 0 {
-            player.gold += rolling * player.banks;
+            // player.gold += rolling * player.banks;
+            player.gold += player.banks * 20;
         }
 
         set !(ctx.world, (player, land_owner, townhall));
