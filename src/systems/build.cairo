@@ -24,7 +24,7 @@ mod build {
                 Building::Nothing(()) => 0,
                 Building::Hotel(()) => 100,
                 Building::Bank(()) => 500,
-                Building::Starkbucks(()) => 1000,
+                Building::Starkbucks(()) => 500,
             }
         }
     }
@@ -63,7 +63,7 @@ mod build {
             Building::Nothing(()) => (0,0),
             Building::Hotel(()) => (1,100),
             Building::Bank(()) => (2,500),
-            Building::Starkbucks(()) => (3,1000),
+            Building::Starkbucks(()) => (3,500),
         }
     }
 }

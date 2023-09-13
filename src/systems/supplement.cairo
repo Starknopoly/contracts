@@ -18,8 +18,8 @@ mod supplement {
         let mut townhall = get !(ctx.world, 1, (Townhall));
 
         player.steps += amounts; 
-        player.gold  -= amounts * 10;
-        townhall.gold +=  amounts * 10; 
+        player.gold  -= amounts * 100;
+        townhall.gold +=  amounts * 100;
         assert(player.gold >= 0, 'gold not enaugh');
 
         set !(ctx.world, (player,townhall));
