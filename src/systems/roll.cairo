@@ -24,11 +24,11 @@ mod roll {
         assert(player.gold > 0, 'gold not enough');
         assert(time_now - player.last_time > 5, 'roll too often');
 
-        let rolling: u64 = time_now % 5 + 1;//生成一个1-6的（伪）随机数
+        let rolling: u64 = time_now % 5 + 1;//生成一个1-6的(伪)随机数
         player.steps -= 1;
         player.last_point = rolling;
         player.last_time = time_now;
-
+        player.total_steps += rolling;
         //本轮结算
 
         // 1.更新玩家投掷后的位置
