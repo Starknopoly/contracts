@@ -42,6 +42,11 @@ mod build {
         let mut land = get !(ctx.world, player.position, (Land));
         // 如果要在该地块建造地产，该地块应为无主地块
         assert(land.owner == starknet::contract_address_const::<0x0>(), 'has been developed');
+        
+        // 确保土地性质为商业用地
+         let build_permit: bool = build_permit(player.position);
+         assert(build_permit, 'can not build here');
+
         land.owner = ctx.origin;
     
         let (building_type, building_price) = get_building_object(building);
@@ -56,6 +61,24 @@ mod build {
         assert(player.gold >= 0, 'gold not enaugh');
         set !(ctx.world, (player,land));
         return ();
+    }
+    
+    fn build_permit(land_id: u64) -> bool {
+
+        let land_id_felt:felt252 = land_id.into();
+        let mut building_seed_arr:Array<felt252> = ArrayTrait::new();
+        building_seed_arr.append(land_id_felt);
+        building_seed_arr.append(2023);
+        building_seed_arr.append(1024);
+
+        let build_permit_hash = poseidon::poseidon_hash_span(building_seed_arr.span());
+        let x: u256 = build_permit_hash.into();
+        let permit = x % 4 ;
+        if permit != 0 {
+            false
+        }else{
+            true
+        }
     }
 
     fn get_building_object(building: Building) -> (u64,u64) {
