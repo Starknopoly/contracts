@@ -14,6 +14,10 @@ v 0.1.5
 Add function of banks.Player can obtain gold of the rolling points
 Add the field banks for player
 
+v 0.1.6
+Add function of Starkbucks. Player can buy steps use gold
+1/3 of the land can be built by the player
+
 sozo build
 
 katana --disable-fee

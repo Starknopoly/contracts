@@ -7,6 +7,7 @@ mod supplement {
     use dojo::world::Context;
 
     use stark_nopoly::components::player::Player;
+    use stark_nopoly::components::land::Land;
     use stark_nopoly::components::townhall::Townhall;
 
 
@@ -15,7 +16,11 @@ mod supplement {
         // 确保账户存在
         let mut player = get !(ctx.world, ctx.origin, (Player));
         assert(player.joined_time != 0, 'you not join'); 
-        let mut townhall = get !(ctx.world, 1, (Townhall));
+
+        // 得到玩家所处位置的地块信息
+        let mut land = get !(ctx.world, player.position, (Land));
+ 		let mut townhall = get !(ctx.world, 1, (Townhall));
+        assert(land.building_type == 3, 'is not starkbucks'); 
 
         player.steps += amounts; 
         player.gold  -= amounts * 100;
