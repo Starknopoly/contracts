@@ -73,7 +73,7 @@ mod build {
 
         let build_permit_hash = poseidon::poseidon_hash_span(building_seed_arr.span());
         let x: u256 = build_permit_hash.into();
-        let permit = x % 4 ;
+        let permit = x % 2 ;
         if permit != 0 {
             false
         }else{
