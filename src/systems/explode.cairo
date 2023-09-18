@@ -22,7 +22,7 @@ mod explode {
         let mut land = get !(ctx.world, player.position, (Land));
  		let mut townhall = get !(ctx.world, 1, (Townhall));
 
-        assert(land.building_type == 0, 'buildings in the land'); 
+        assert(land.building_type == 0, 'buildings in the land');
         assert(land.bomber != ctx.origin, 'can not bomb twice'); 
         assert(player.gold > bomb_price, 'gold not enough'); 
         
