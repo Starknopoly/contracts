@@ -34,3 +34,5 @@ sozo auth writer Land explode
 sleep 1
 sozo auth writer Townhall explode
 sleep 1
+sozo auth writer Player claim_steps
+sleep 1

@@ -38,6 +38,7 @@ mod spawn {
                     last_time:0_u64,
                     total_steps:0_u64,
                     banks: 0_u64,
+                    last_claim_time: 0_u64,
                 },
             )
         );
