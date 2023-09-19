@@ -6,4 +6,5 @@ const MAX_MAP: felt252 = 400;  //100*100
 const INIT_GOLD: felt252 = 2000;
 const INIT_STEPS: felt252 = 20;
 const ROLL_COLDDOWN: felt252 = 10;
+const MAX_BUY_GOLD_ETH:u128 = 500_000_000_000_000_000;
 

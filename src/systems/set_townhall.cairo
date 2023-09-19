@@ -10,16 +10,7 @@ mod set_townhall {
 
     //初始化国库及资金
     fn execute(ctx: Context) {
-        set!(
-                ctx.world,
-                (
-                    Townhall {
-                        id: 1,
-                        gold: 100000,
-                    },
-                )
-            );
-            return ();
+        set!(ctx.world, (Townhall { id: 1, gold: 100000, },));
+        return ();
     }
-
 }
