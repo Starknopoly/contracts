@@ -43,7 +43,7 @@ mod spawn {
                 },
             )
         );
-        set!(ctx.world, (ETH { id: ctx.origin, balance: 500_000_000_000_000_000, }));
+        set!(ctx.world, (ETH { id: ctx.origin, balance: 500_000_000_000_000_000 }));
         return ();
     }
 }

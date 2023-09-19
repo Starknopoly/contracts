@@ -6,5 +6,5 @@ use starknet::ContractAddress;
 struct ETH {
     #[key]
     id: ContractAddress,
-    balance: u128,// 由admin进行初始化设置。
+    balance: u128,
 }
