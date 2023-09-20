@@ -18,6 +18,10 @@ v 0.1.6
 Add function of Starkbucks. Player can buy steps use gold
 1/3 of the land can be built by the player
 
+v 0.1.7
+Add buy_gold functions.
+Player can buy gold at treasury.
+
 sozo build
 
 katana --disable-fee
