@@ -16,5 +16,6 @@ struct Player {
     last_time: u64, // 最近一次掷骰子的时间(区块时间戳)
     total_steps: u64, //玩家当前总共走的步数
     banks: u64,
-    total_used_eth: u128
+    total_used_eth: u128,
+    deposit: u64,
 }

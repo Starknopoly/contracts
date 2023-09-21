@@ -24,6 +24,7 @@ Player can buy gold at treasury.
 
 v 0.1.8
 50% build golds are funded into treasury.
+Add deposit functions,can swap eth to gold.
 
 sozo build
 
