@@ -39,7 +39,8 @@ mod spawn {
                     last_time: 0_u64,
                     total_steps: 0_u64,
                     banks: 0_u64,
-                    total_used_eth:0_u128
+                    total_used_eth:0_u128,
+                    deposit: 0_u64,
                 },
             )
         );

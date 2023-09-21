@@ -22,6 +22,10 @@ v 0.1.7
 Add buy_gold functions.
 Player can buy gold at treasury.
 
+v 0.1.8
+Add deposit functions,can swap eth to gold.
+
+
 sozo build
 
 katana --disable-fee
