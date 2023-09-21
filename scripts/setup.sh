@@ -18,6 +18,8 @@ sozo auth writer Player build
 sleep 1
 sozo auth writer Land build
 sleep 1
+sozo auth writer Townhall build
+sleep 1
 sozo auth writer Player buy
 sleep 1
 sozo auth writer Land buy

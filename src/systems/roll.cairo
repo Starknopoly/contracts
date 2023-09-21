@@ -74,7 +74,6 @@ mod roll {
                 townhall.gold   += player.gold * 1 / 10 ;
                 player.gold = 0;
             }
-            
         }
 
         //3.结算银行收入

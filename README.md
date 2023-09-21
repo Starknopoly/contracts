@@ -22,6 +22,9 @@ v 0.1.7
 Add buy_gold functions.
 Player can buy gold at treasury.
 
+v 0.1.8
+50% build golds are funded into treasury.
+
 sozo build
 
 katana --disable-fee
