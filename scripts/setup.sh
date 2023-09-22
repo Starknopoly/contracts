@@ -1,46 +1,53 @@
-# todo: config file
-sozo execute set_townhall # 国库
+#!/bin/bash
+set -euo pipefail
+pushd $(dirname "$0")/..
+
+export WORLD_ADDRESS="0x84486b8e9ffe38978b33c9d7685d9d2d487d0e9f096a1d2669edefc8506c35";
+
+sozo execute set_townhall  --world $WORLD_ADDRESS # 国库
 sleep 1
 
 # Authoritarian
-sozo auth writer Player spawn
+sozo auth writer Player spawn --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer ETH spawn
+sozo auth writer ETH spawn --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Player roll
+sozo auth writer Player roll --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Land roll
+sozo auth writer Land roll --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Townhall roll
+sozo auth writer Townhall roll --world $WORLD_ADDRESS
 sleep 1
 
-sozo auth writer Player build
+sozo auth writer Player build --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Land build
+sozo auth writer Land build --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Townhall build
+sozo auth writer Townhall build --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Player buy
+sozo auth writer Player buy --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Land buy
+sozo auth writer Land buy --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Townhall buy
+sozo auth writer Townhall buy --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Player supplement
+sozo auth writer Player supplement --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Land supplement
+sozo auth writer Land supplement --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Townhall supplement
+sozo auth writer Townhall supplement --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Player explode
+sozo auth writer Player explode --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Land explode
+sozo auth writer Land explode --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Townhall explode
+sozo auth writer Townhall explode --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer ETH buy_gold
+sozo auth writer ETH buy_gold --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Player buy_gold
+sozo auth writer Player buy_gold --world $WORLD_ADDRESS
 sleep 1
-sozo auth writer Townhall buy_gold
+sozo auth writer Townhall buy_gold --world $WORLD_ADDRESS
 sleep 1
+
+echo "Default authorizations have been successfully set."
