@@ -24,7 +24,7 @@ mod roll {
         assert(player.gold > 0, 'gold not enough');
         assert(time_now - player.last_time > 5, 'roll too often');
 
-        let rolling: u64 = time_now % 5 + 1;//生成一个1-6的(伪)随机数
+        let rolling: u64 = random_point(time_now);//生成一个1-6的(伪)随机数
         player.steps -= 1;
         player.last_point = rolling;
         player.last_time = time_now;
@@ -84,5 +84,16 @@ mod roll {
 
         set !(ctx.world, (player, land_owner, townhall));
         return ();
+    }
+
+    fn random_point(seed: u64) -> u64 {
+        let seed_felt: felt252 = seed.into();
+        let mut building_seed_arr: Array<felt252> = ArrayTrait::new();
+        random_point_arr.append(seed);
+        random_point_arr.append(2023);
+        random_point_arr.append(1024);
+        let random_point_hash = poseidon::poseidon_hash_span(random_point_arr.span());
+        let x: u64 = build_permit_hash.into();
+        x % 6 + 1
     }
 }
