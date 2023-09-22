@@ -49,5 +49,6 @@ sozo auth writer Player buy_gold --world $WORLD_ADDRESS
 sleep 1
 sozo auth writer Townhall buy_gold --world $WORLD_ADDRESS
 sleep 1
-
+sozo auth writer Player claim_steps --world $WORLD_ADDRESS
+sleep 1
 echo "Default authorizations have been successfully set."
