@@ -26,6 +26,13 @@ v 0.1.8
 50% build golds are funded into treasury.
 Add deposit functions,can swap eth to gold.
 
+v 0.1.9
+update rolling random
+
+v 0.1.10
+Add utils::random
+
+
 sozo build
 
 katana --disable-fee

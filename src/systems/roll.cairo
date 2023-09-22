@@ -5,6 +5,12 @@ mod roll {
     use traits::{Into, TryInto};
     use option::OptionTrait;
     use dojo::world::Context;
+<<<<<<< Updated upstream
+=======
+    use debug::PrintTrait;
+    
+    use stark_nopoly::utils::random::random;
+>>>>>>> Stashed changes
 
     use stark_nopoly::components::player::Player;
     use stark_nopoly::components::land::Land;
@@ -24,7 +30,14 @@ mod roll {
         assert(player.gold > 0, 'gold not enough');
         assert(time_now - player.last_time > 5, 'roll too often');
 
+<<<<<<< Updated upstream
         let rolling: u64 = random_point(time_now);//生成一个1-6的(伪)随机数
+=======
+        let rolling: u64 = random(time_now) % 6 + 1;  //生成一个1-6的(伪)随机数
+        //let rolling: u64 = time_now % 6 + 1;//生成一个1-6的(伪)
+        rolling.print();
+        
+>>>>>>> Stashed changes
         player.steps -= 1;
         player.last_point = rolling;
         player.last_time = time_now;
@@ -85,6 +98,7 @@ mod roll {
         set !(ctx.world, (player, land_owner, townhall));
         return ();
     }
+<<<<<<< Updated upstream
 
     fn random_point(seed: u64) -> u64 {
         let seed_felt: felt252 = seed.into();
@@ -96,4 +110,6 @@ mod roll {
         let x: u64 = build_permit_hash.into();
         x % 6 + 1
     }
+=======
+>>>>>>> Stashed changes
 }
