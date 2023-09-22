@@ -5,6 +5,8 @@ sleep 1
 # Authoritarian
 sozo auth writer Player spawn
 sleep 1
+sozo auth writer ETH spawn
+sleep 1
 sozo auth writer Player roll
 sleep 1
 sozo auth writer Land roll
@@ -15,6 +17,8 @@ sleep 1
 sozo auth writer Player build
 sleep 1
 sozo auth writer Land build
+sleep 1
+sozo auth writer Townhall build
 sleep 1
 sozo auth writer Player buy
 sleep 1
@@ -33,4 +37,10 @@ sleep 1
 sozo auth writer Land explode
 sleep 1
 sozo auth writer Townhall explode
+sleep 1
+sozo auth writer ETH buy_gold
+sleep 1
+sozo auth writer Player buy_gold
+sleep 1
+sozo auth writer Townhall buy_gold
 sleep 1

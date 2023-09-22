@@ -18,7 +18,7 @@ mod admin_roll {
         let time_now: u64 = starknet::get_block_timestamp(); 
 
         //确保账户存在
-        let mut player = get !(ctx.world, ctx.origin, (Player));
+        let mut player:Player = get !(ctx.world, ctx.origin, (Player));
         assert(player.joined_time != 0, 'you not join');
         assert(player.steps > 0, 'steps not enough');   
         assert(player.gold > 0, 'gold not enough');
@@ -41,7 +41,7 @@ mod admin_roll {
             }
             
         player.position = new_positon;
-        let mut land = get !(ctx.world, new_positon, (Land));
+        let mut land:Land = get !(ctx.world, new_positon, (Land));
         let mut land_owner = get !(ctx.world, land.owner, (Player));
         let mut townhall = get !(ctx.world, 1, (Townhall));
 

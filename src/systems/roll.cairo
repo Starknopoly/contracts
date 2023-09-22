@@ -56,7 +56,7 @@ mod roll {
                 townhall.gold += player.gold * 2 / 10;
                 player.gold = 0;
            }
-
+            land.bomber = starknet::contract_address_const::<0x0>();
            land.bomb = false;
            set !(ctx.world, (bomber,land));
 
@@ -74,7 +74,6 @@ mod roll {
                 townhall.gold   += player.gold * 1 / 10 ;
                 player.gold = 0;
             }
-            
         }
 
         //3.结算银行收入
