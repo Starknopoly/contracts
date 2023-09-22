@@ -5,6 +5,7 @@ mod roll {
     use traits::{Into, TryInto};
     use option::OptionTrait;
     use dojo::world::Context;
+    use debug::PrintTrait;
 
     use stark_nopoly::components::player::Player;
     use stark_nopoly::components::land::Land;
@@ -26,7 +27,8 @@ mod roll {
 
         // let rolling: u64 = random_point(time_now);//生成一个1-6的(伪)随机数
         let rolling: u64 = time_now % 6 + 1;//生成一个1-6的(伪)
-
+        rolling.print();
+        
         player.steps -= 1;
         player.last_point = rolling;
         player.last_time = time_now;
@@ -93,12 +95,12 @@ mod roll {
         let seed_felt: felt252 = seed.into();
         let mut rolling_seed_arr: Array<felt252> = ArrayTrait::new();
         rolling_seed_arr.append(seed_felt);
-        rolling_seed_arr.append(2023);
-        rolling_seed_arr.append(1024);
+        rolling_seed_arr.append(seed_felt * 7);
+        rolling_seed_arr.append(seed_felt * 29);
 
-        let rolling_hash = poseidon::poseidon_hash_span(rolling_seed_arr.span());
-        let x: u64 = rolling_hash.try_into().unwrap();
-        x % 6 + 1
-
+        let rolling_hash: u256 = poseidon::poseidon_hash_span(rolling_seed_arr.span()).into();
+        let x: u64 = (rolling_hash % 6 + 1).try_into().unwrap();
+        x
     }
+
 }
