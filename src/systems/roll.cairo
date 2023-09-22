@@ -86,14 +86,17 @@ mod roll {
         return ();
     }
 
-    fn random_point(seed: u64) -> u64 {
+  
+    fn random_point(seed: u64) -> u64  {
         let seed_felt: felt252 = seed.into();
-        let mut building_seed_arr: Array<felt252> = ArrayTrait::new();
-        random_point_arr.append(seed);
-        random_point_arr.append(2023);
-        random_point_arr.append(1024);
-        let random_point_hash = poseidon::poseidon_hash_span(random_point_arr.span());
-        let x: u64 = build_permit_hash.into();
+        let mut rolling_seed_arr: Array<felt252> = ArrayTrait::new();
+        rolling_seed_arr.append(seed_felt);
+        rolling_seed_arr.append(2023);
+        rolling_seed_arr.append(1024);
+
+        let rolling_hash = poseidon::poseidon_hash_span(rolling_seed_arr.span());
+        let x: u64 = rolling_hash.try_into().unwrap();
         x % 6 + 1
+
     }
 }
