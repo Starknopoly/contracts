@@ -60,7 +60,8 @@ mod build {
         player
             .gold -=
                 building_price; // 玩家建筑所花费的金币直接烧掉？或存入国库？
-        townhall.gold += building_price * 50 / 100;
+        //20% funded in treasury
+        townhall.gold += building_price * 20 / 100;
         // 如果是银行
         if building_type == 2 {
             player.banks += 1;

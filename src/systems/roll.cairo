@@ -49,8 +49,8 @@ mod roll {
            let mut bomber = get !(ctx.world, land.bomber, (Player));
            if player.gold >= land.bomb_price * 2 {
                 player.gold -= land.bomb_price * 2;
-                bomber.gold   += land.bomb_price * 2 * 8 / 10;
-                townhall.gold += land.bomb_price * 2 * 2 / 10;
+                bomber.gold   += land.bomb_price * 2 * 7 / 10;
+                townhall.gold += land.bomb_price * 2 * 1 / 10;
            } else{   
                 bomber.gold   += player.gold * 8 / 10;
                 townhall.gold += player.gold * 2 / 10;
