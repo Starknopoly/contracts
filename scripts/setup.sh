@@ -3,25 +3,29 @@ set -euo pipefail
 pushd $(dirname "$0")/..
 
 export WORLD_ADDRESS="0x12aea93a199ffb3b8b8abca77ff2297da26d31f5bad5a87713b823171f59302";
-export WORLD_ADDRESS="0x12aea93a199ffb3b8b8abca77ff2297da26d31f5bad5a87713b823171f59302";
 
 sozo execute set_townhall  --world $WORLD_ADDRESS # 国库
 sleep 1
 
 # Authoritarian
 sozo auth writer Player spawn --world $WORLD_ADDRESS
+sleep 1
 sozo auth writer Player spawn --world $WORLD_ADDRESS
 sleep 1
 sozo auth writer ETH spawn --world $WORLD_ADDRESS
+sleep 1
 sozo auth writer ETH spawn --world $WORLD_ADDRESS
 sleep 1
 sozo auth writer Player roll --world $WORLD_ADDRESS
+sleep 1
 sozo auth writer Player roll --world $WORLD_ADDRESS
 sleep 1
 sozo auth writer Land roll --world $WORLD_ADDRESS
+sleep 1
 sozo auth writer Land roll --world $WORLD_ADDRESS
 sleep 1
 sozo auth writer Townhall roll --world $WORLD_ADDRESS
+sleep 1
 sozo auth writer Townhall roll --world $WORLD_ADDRESS
 sleep 1
 
