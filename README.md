@@ -32,6 +32,10 @@ update rolling random
 v 0.1.10
 Add utils::random
 
+v 0.1.11
+Resize map from 20*20 to 30*30
+Add energy recover system
+update 40% build golds are funded into treasury.
 
 sozo build
 

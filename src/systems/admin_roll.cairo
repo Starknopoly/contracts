@@ -14,7 +14,8 @@ mod admin_roll {
 
     fn execute(ctx: Context, admin_position: u64) {
 
-        let max_map: u64 = MAX_MAP.try_into().unwrap();
+        // let max_map: u64 = MAX_MAP.try_into().unwrap();
+        let max_map: u64 = 900;
         let time_now: u64 = starknet::get_block_timestamp(); 
 
         //确保账户存在

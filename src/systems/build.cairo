@@ -36,7 +36,8 @@ mod build {
 
 
     fn execute(ctx: Context, building: Building) {
-        let max_map: u64 = MAX_MAP.try_into().unwrap();
+        // let max_map: u64 = MAX_MAP.try_into().unwrap();
+        let max_map: u64 = 900;
         let time_now: u64 = starknet::get_block_timestamp();
 
         // 确保账户存在
@@ -60,8 +61,8 @@ mod build {
         player
             .gold -=
                 building_price; // 玩家建筑所花费的金币直接烧掉？或存入国库？
-        //20% funded in treasury
-        townhall.gold += building_price * 20 / 100;
+        //40% funded in treasury
+        townhall.gold += building_price * 40 / 100;
         // 如果是银行
         if building_type == 2 {
             player.banks += 1;

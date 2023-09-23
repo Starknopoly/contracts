@@ -2,7 +2,8 @@
 
 //100*100 is too large for test
 //use 20*20 for test
-const MAX_MAP: felt252 = 400;  //100*100
+//update to 30*30
+const MAX_MAP: felt252 = 900;  
 const INIT_GOLD: felt252 = 2000;
 const INIT_STEPS: felt252 = 20;
 const ROLL_COLDDOWN: felt252 = 10;

@@ -3,6 +3,7 @@ set -euo pipefail
 pushd $(dirname "$0")/..
 
 export WORLD_ADDRESS="0x12aea93a199ffb3b8b8abca77ff2297da26d31f5bad5a87713b823171f59302";
+export WORLD_ADDRESS="0x12aea93a199ffb3b8b8abca77ff2297da26d31f5bad5a87713b823171f59302";
 
 sozo execute set_townhall  --world $WORLD_ADDRESS # 国库
 sleep 1
@@ -53,6 +54,10 @@ sleep 1
 sozo auth writer Player buy_gold --world $WORLD_ADDRESS
 sleep 1
 sozo auth writer Townhall buy_gold --world $WORLD_ADDRESS
+sleep 1
+sozo auth writer Player claim_energy --world $WORLD_ADDRESS
+sleep 1
+sozo auth writer EnergyRecover claim_energy --world $WORLD_ADDRESS
 sleep 1
 
 echo "Default authorizations have been successfully set."

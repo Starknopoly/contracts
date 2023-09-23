@@ -7,5 +7,5 @@ mod supplement;
 mod explode;
 mod admin_roll; // ONLY FOR TEST
 mod buy_gold;
-mod deposit;
-mod claim_steps;
+// mod deposit;
+mod claim_energy;
