@@ -13,7 +13,8 @@ mod spawn {
     use stark_nopoly::constants::INIT_STEPS;
 
     fn execute(ctx: Context, nick_name: felt252) {
-        let max_map: u64 = MAX_MAP.try_into().unwrap();
+        // let max_map: u64 = MAX_MAP.try_into().unwrap();
+        let max_map: u64 = 900;
         let init_gold: u64 = INIT_GOLD.try_into().unwrap();
         let init_steps: u64 = INIT_STEPS.try_into().unwrap();
         //fn get_block_timestamp() -> u64{get_block_info().unbox().block_timestamp}
@@ -39,7 +40,7 @@ mod spawn {
                     last_time: 0_u64,
                     total_steps: 0_u64,
                     banks: 0_u64,
-                    total_used_eth:0_u128,
+                    total_used_eth: 0_u128,
                     deposit: 0_u64,
                 },
             )
