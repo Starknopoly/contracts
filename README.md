@@ -10,7 +10,7 @@ Bomb can be planted on land where there are buildings.
 Player cannot continuously place bombs on the same land.
 The bomber not pays Townhall 20% of his bombing income.
 
-v 0.1.5
+0.1.9
 Add function of banks.Player can obtain gold of the rolling points
 Add the field banks for player
 

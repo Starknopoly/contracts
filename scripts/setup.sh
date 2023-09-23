@@ -61,3 +61,4 @@ sozo auth writer EnergyRecover claim_energy --world $WORLD_ADDRESS
 sleep 1
 
 echo "Default authorizations have been successfully set."
+
